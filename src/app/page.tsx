@@ -48,36 +48,36 @@ export default function HomePage() {
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-gray-950/75 to-transparent pointer-events-none" />
 
 
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-4 pt-28 md:pt-36 pb-8 md:pb-12 text-center">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 pt-28 md:pt-36 pb-20 md:pb-32 text-center">
           <div className="flex flex-col items-center">
             
-            {/* 1. Badge */}
-            <div className="inline-flex items-center gap-2 glass px-4 py-1.5 mb-6 text-[10px] md:text-xs animate-fade-in-up">
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              <span className="text-gray-300 font-medium">Riparazioni Multimarca</span>
-            </div>
-
-            {/* 2. H1 */}
-            <h1 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mb-8 animate-fade-in-up">
+            {/* 1. H1 (Monumentale) */}
+            <h1 className="text-4xl md:text-7xl font-black text-white tracking-tight leading-[1.05] mb-12 animate-fade-in-up">
               La tua auto{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-amber-400">
                 merita il meglio
               </span>
             </h1>
 
-            {/* 3. Widget Prenotazione (In mezzo) */}
+            {/* 2. Widget Prenotazione */}
             <div className="w-full max-w-lg mb-10 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
               <BookingWidget preselectedService={selectedService} />
             </div>
 
-            {/* 4. H2 / Descrizione (Sotto) */}
-            <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-xl mb-8 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
+            {/* 3. Badge (Sotto il widget) */}
+            <div className="inline-flex items-center gap-2 glass px-4 py-1.5 mb-6 text-[10px] md:text-xs animate-fade-in-up" style={{ animationDelay: '300ms' }}>
+              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+              <span className="text-gray-300 font-medium">Riparazioni Multimarca</span>
+            </div>
+
+            {/* 4. H2 / Descrizione */}
+            <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-xl mb-12 animate-fade-in-up" style={{ animationDelay: '400ms' }}>
               Prenota il tuo appuntamento in pochi secondi. Cambio gomme, carrozzeria,
               elettrauto e molto altro.
             </p>
 
             {/* 5. Icons/Benefits */}
-            <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500 animate-fade-in-up" style={{ animationDelay: '400ms' }}>
+            <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500 animate-fade-in-up" style={{ animationDelay: '500ms' }}>
               <div className="flex items-center gap-1.5">
                 <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
