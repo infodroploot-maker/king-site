@@ -16,14 +16,12 @@ export async function updateSession(request: NextRequest) {
     },
   })
   const { data: { user } } = await supabase.auth.getUser()
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || new URL(request.url).origin
-
   if (request.nextUrl.pathname.startsWith('/dashboard') && !user) {
-    return NextResponse.redirect(new URL('/auth/login', baseUrl))
+    return NextResponse.redirect(new URL('/auth/login', request.url))
   }
   
   if (request.nextUrl.pathname.startsWith('/auth/login') && user) {
-    return NextResponse.redirect(new URL('/dashboard', baseUrl))
+    return NextResponse.redirect(new URL('/dashboard', request.url))
   }
   return supabaseResponse
 }

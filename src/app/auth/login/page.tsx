@@ -12,10 +12,7 @@ export default function LoginPage() {
 
   async function handleGoogleLogin() {
     setLoading(true)
-    
-    // In produzione usiamo l'URL pubblico, in sviluppo l'origin locale
-    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || window.location.origin
-    const redirectUrl = `${baseUrl.replace(/\/$/, '')}/auth/callback?next=/dashboard`
+    const redirectUrl = `${window.location.origin}/auth/callback?next=/dashboard`
 
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
