@@ -5,8 +5,8 @@ export async function GET(request: NextRequest) {
   const code = searchParams.get('code')
   const next = searchParams.get('next') ?? '/dashboard'
   
-  // Usiamo NEXT_PUBLIC_APP_URL se definito, altrimenti l'origin della richiesta assicurandoci sia HTTPS
-  let baseUrl = process.env.NEXT_PUBLIC_APP_URL || new URL(request.url).origin
+  // Puliamo il baseUrl per evitare doppie barre o protocolli errati
+  let baseUrl = (process.env.NEXT_PUBLIC_APP_URL || new URL(request.url).origin).replace(/\/$/, '')
   if (baseUrl.includes('vercel.app')) baseUrl = baseUrl.replace('http://', 'https://')
 
   if (code) {
