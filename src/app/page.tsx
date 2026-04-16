@@ -48,9 +48,8 @@ export default function HomePage() {
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-gray-950/75 to-transparent pointer-events-none" />
 
 
-        {/* Contenuto Hero */}
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-4 pt-24 md:pt-32 pb-12 md:pb-20">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-4 pt-20 md:pt-24 pb-8 md:pb-12">
+          <div className="grid lg:grid-cols-2 gap-4 md:gap-8 items-center">
             {/* Testo Hero */}
             <div className="text-center lg:text-left animate-fade-in-up">
               <div className="inline-flex items-center gap-2 glass px-4 py-1.5 mb-6 text-[10px] md:text-xs">
@@ -58,14 +57,14 @@ export default function HomePage() {
                 <span className="text-gray-300 font-medium">Riparazioni Multimarca</span>
               </div>
 
-              <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight leading-[1.1] mb-6">
+              <h1 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-[1.1] mb-4">
                 La tua auto{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-amber-400">
                   merita il meglio
                 </span>
               </h1>
 
-              <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-lg mx-auto lg:mx-0 mb-8">
+              <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0 mb-6">
                 Prenota il tuo appuntamento in pochi secondi. Cambio gomme, carrozzeria,
                 elettrauto e molto altro.
               </p>

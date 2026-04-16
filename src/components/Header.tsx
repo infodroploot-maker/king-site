@@ -40,7 +40,7 @@ export default function Header() {
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled || menuOpen
-          ? 'bg-gray-950/95 backdrop-blur-xl border-b border-white/5 py-2 md:py-3 shadow-xl'
+          ? 'bg-gray-950 border-b border-white/5 py-2 md:py-3 shadow-xl'
           : 'bg-transparent py-4 md:py-6'
       }`}
     >
@@ -84,7 +84,7 @@ export default function Header() {
 
       {/* Mobile Menu Overlay */}
       {menuOpen && (
-        <div className="fixed inset-0 z-[60] bg-gray-950/95 backdrop-blur-xl flex flex-col pt-6 px-4 animate-fade-in">
+        <div className="fixed inset-0 z-[60] bg-gray-950 flex flex-col pt-6 px-4 animate-fade-in">
           <div className="flex justify-between items-center mb-12">
             <div className="w-8"></div>
             <Image 
