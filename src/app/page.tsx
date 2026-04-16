@@ -48,11 +48,11 @@ export default function HomePage() {
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-gray-950/75 to-transparent pointer-events-none" />
 
 
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 pt-28 md:pt-36 pb-20 md:pb-32 text-center">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 pt-28 md:pt-48 pb-20 md:pb-32 text-center">
           <div className="flex flex-col items-center">
             
             {/* 1. H1 (Monumentale) */}
-            <h1 className="text-4xl md:text-7xl font-black text-white tracking-tight leading-[1.05] mb-12 animate-fade-in-up">
+            <h1 className="text-4xl md:text-7xl font-black text-white tracking-tight leading-[1.05] mb-4 md:mb-12 animate-fade-in-up">
               La tua auto{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-amber-400">
                 merita il meglio
