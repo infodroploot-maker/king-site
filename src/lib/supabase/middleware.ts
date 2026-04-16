@@ -15,13 +15,28 @@ export async function updateSession(request: NextRequest) {
       },
     },
   })
+  // Ricarichiamo l'utente per assicurarci di avere lo stato più fresco
   const { data: { user } } = await supabase.auth.getUser()
+
+  // PROTEZIONE ANTI-LOOP: 
+  // Se siamo nel callback, non interferiamo con i redirect (lasciamo fare all'API route)
+  if (request.nextUrl.pathname.startsWith('/auth/callback')) {
+    return supabaseResponse
+  }
+
+  // Se siamo in dashboard e NON c'è l'utente, mandiamo al login
   if (request.nextUrl.pathname.startsWith('/dashboard') && !user) {
-    return NextResponse.redirect(new URL('/auth/login', request.url))
+    const url = request.nextUrl.clone()
+    url.pathname = '/auth/login'
+    url.searchParams.set('reason', 'no_session')
+    return NextResponse.redirect(url)
   }
   
+  // Se siamo in login e C'È l'utente, mandiamo in dashboard
   if (request.nextUrl.pathname.startsWith('/auth/login') && user) {
-    return NextResponse.redirect(new URL('/dashboard', request.url))
+    const url = request.nextUrl.clone()
+    url.pathname = '/dashboard'
+    return NextResponse.redirect(url)
   }
   return supabaseResponse
 }
