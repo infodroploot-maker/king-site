@@ -38,10 +38,14 @@ export default function LoginPage() {
         </div>
 
         <div className="glass-strong p-8">
-          <h2 className="text-xl font-bold text-white text-center mb-2">La tua Area Personale</h2>
           <p className="text-sm text-gray-500 text-center mb-6">
             Segui lo stato della tua auto in tempo reale.
           </p>
+
+          {/* DIAGNOSTIC: Rimuovere dopo i test */}
+          {!process.env.NEXT_PUBLIC_SUPABASE_URL && (
+            <div className="text-[10px] text-red-500/50 text-center mb-2">DEBUG: SUPABASE_URL MISSING</div>
+          )}
 
           <button
             onClick={handleGoogleLogin}
