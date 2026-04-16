@@ -4,17 +4,27 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 import Image from 'next/image'
+import { createClient } from '@/lib/supabase/client'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
 
   const [menuOpen, setMenuOpen] = useState(false)
+  const [user, setUser] = useState<any>(null)
+  const supabase = createClient()
 
   useEffect(() => {
+    supabase.auth.getUser().then(({ data }) => setUser(data.user))
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null)
+    })
     const onScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      subscription.unsubscribe()
+    }
+  }, [supabase.auth])
 
   return (
     <header
@@ -46,8 +56,8 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-8 text-sm">
           <a href="#servizi" className="text-gray-400 hover:text-white transition-colors duration-300">Servizi</a>
           <a href="#prenota" className="text-gray-400 hover:text-white transition-colors duration-300">Prenota</a>
-          <Link href="/auth/login" className="btn-primary text-sm px-5 py-2.5">
-            Area Clienti
+          <Link href={user ? "/dashboard" : "/auth/login"} className="btn-primary text-sm px-5 py-2.5">
+            {user ? "Mia Dashboard" : "Area Clienti"}
           </Link>
         </nav>
 
@@ -84,8 +94,8 @@ export default function Header() {
           <nav className="flex flex-col items-center gap-8 text-lg font-medium text-white">
             <a href="#servizi" onClick={() => setMenuOpen(false)} className="hover:text-primary-400 transition">Servizi</a>
             <a href="#prenota" onClick={() => setMenuOpen(false)} className="hover:text-primary-400 transition">Prenota</a>
-            <Link href="/auth/login" onClick={() => setMenuOpen(false)} className="btn-primary w-full text-center mt-4">
-              Area Clienti
+            <Link href={user ? "/dashboard" : "/auth/login"} onClick={() => setMenuOpen(false)} className="btn-primary w-full text-center mt-4">
+              {user ? "Mia Dashboard" : "Area Clienti"}
             </Link>
           </nav>
         </div>
