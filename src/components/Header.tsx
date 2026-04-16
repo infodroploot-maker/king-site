@@ -26,11 +26,21 @@ export default function Header() {
     }
   }, [supabase.auth])
 
+  // Scroll Lock: impedisce lo scroll del body quando il menu è aperto
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => { document.body.style.overflow = 'unset' }
+  }, [menuOpen])
+
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-gray-950/80 backdrop-blur-xl border-b border-white/5 py-2 md:py-3 shadow-xl'
+        scrolled || menuOpen
+          ? 'bg-gray-950/95 backdrop-blur-xl border-b border-white/5 py-2 md:py-3 shadow-xl'
           : 'bg-transparent py-4 md:py-6'
       }`}
     >
