@@ -12,7 +12,7 @@ export default function LoginPage() {
 
   async function handleGoogleLogin() {
     setLoading(true)
-    const redirectUrl = `${window.location.origin}/auth/callback?next=/dashboard`
+    const redirectUrl = `${window.location.origin}/api/auth/confirm?next=/dashboard`
 
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
