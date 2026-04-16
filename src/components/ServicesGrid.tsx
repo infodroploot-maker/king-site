@@ -22,7 +22,7 @@ export default function ServicesGrid({ onSelectService }: ServicesGridProps) {
   const services = Object.entries(SERVICE_LABELS) as [ServiceType, string][]
 
   return (
-    <section id="servizi" className="relative py-24 px-4">
+    <section id="servizi" className="relative py-10 md:py-24 px-4">
       {/* Glow decorativo */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary-500/[0.04] blur-[150px] rounded-full pointer-events-none" />
 

@@ -30,7 +30,7 @@ export default function QualityBanner() {
   ]
 
   return (
-    <section className="relative py-16 px-4">
+    <section className="relative py-10 md:py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="glass-strong p-1 rounded-3xl">
           <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/[0.06]">

@@ -69,7 +69,7 @@ export default function ReviewsSection() {
   const [expanded, setExpanded] = useState<number | null>(null)
 
   return (
-    <section className="relative py-24 px-4">
+    <section className="relative py-10 md:py-24 px-4">
       <div className="absolute top-1/2 left-0 w-[500px] h-[400px] bg-amber-500/[0.03] blur-[150px] rounded-full pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative">

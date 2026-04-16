@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function AboutSection() {
   return (
-    <section className="relative py-24 px-4 overflow-hidden">
+    <section className="relative py-10 md:py-24 px-4 overflow-hidden">
       {/* Glow decorativo */}
       <div className="absolute bottom-0 right-0 w-[600px] h-[400px] bg-primary-500/[0.03] blur-[150px] rounded-full pointer-events-none" />
 

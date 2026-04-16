@@ -59,15 +59,15 @@ export default function HomePage() {
               </span>
             </h1>
 
-            {/* 2. Widget Prenotazione */}
-            <div className="w-full max-w-lg mb-10 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-              <BookingWidget preselectedService={selectedService} />
-            </div>
-
-            {/* 3. Badge (Sotto il widget) */}
-            <div className="inline-flex items-center gap-2 glass px-4 py-1.5 mb-6 text-[10px] md:text-xs animate-fade-in-up" style={{ animationDelay: '300ms' }}>
+            {/* 2. Badge (Ora tra H1 e Widget) */}
+            <div className="inline-flex items-center gap-2 glass px-4 py-1.5 mb-6 text-[10px] md:text-xs animate-fade-in-up" style={{ animationDelay: '200ms' }}>
               <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
               <span className="text-gray-300 font-medium">Riparazioni Multimarca</span>
+            </div>
+
+            {/* 3. Widget Prenotazione */}
+            <div className="w-full max-w-lg mb-10 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
+              <BookingWidget preselectedService={selectedService} />
             </div>
 
             {/* 4. H2 / Descrizione */}
