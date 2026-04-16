@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import BookingLinker from '@/components/BookingLinker'
 import { SERVICE_LABELS, STATUS_CONFIG, type Booking, type BookingStatus } from '@/lib/types'
+import { signOutAction } from '@/lib/actions/auth'
 
 function StatusBadge({ status }: { status: BookingStatus }) {
   const c = STATUS_CONFIG[status]
@@ -55,7 +56,7 @@ export default async function DashboardPage() {
             <Link href="/" className="text-xs text-gray-400 hover:text-white transition hidden sm:block">Sito</Link>
             <Link href="/#servizi" className="text-xs text-gray-400 hover:text-white transition hidden sm:block">Servizi</Link>
             <Link href="/#prenota" className="text-xs text-primary-400 hover:text-primary-300 transition hidden sm:block">Prenota</Link>
-            <form action="/auth/signout" method="post">
+            <form action={signOutAction}>
               <button className="text-sm text-gray-500 hover:text-red-400 transition">Esci</button>
             </form>
           </div>

@@ -50,6 +50,11 @@ export default function HomePage() {
 
         <div className="relative z-10 w-full max-w-6xl mx-auto px-4 pt-20 md:pt-24 pb-8 md:pb-12">
           <div className="grid lg:grid-cols-2 gap-4 md:gap-8 items-center">
+            {/* Widget Prenotazione */}
+            <div className="animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+              <BookingWidget preselectedService={selectedService} />
+            </div>
+
             {/* Testo Hero */}
             <div className="text-center lg:text-left animate-fade-in-up">
               <div className="inline-flex items-center gap-2 glass px-4 py-1.5 mb-6 text-[10px] md:text-xs">
@@ -83,11 +88,6 @@ export default function HomePage() {
                   Tracking in tempo reale
                 </div>
               </div>
-            </div>
-
-            {/* Widget Prenotazione */}
-            <div className="animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-              <BookingWidget preselectedService={selectedService} />
             </div>
           </div>
         </div>
