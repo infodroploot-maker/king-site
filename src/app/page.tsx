@@ -94,10 +94,10 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 animate-float">
-          <span className="text-[10px] text-gray-600 uppercase tracking-widest">Scorri</span>
-          <svg className="w-4 h-4 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        {/* Scroll indicator - Centrato perfettamente */}
+        <div className="absolute bottom-8 inset-x-0 mx-auto w-fit hidden md:flex flex-col items-center gap-2 animate-float">
+          <span className="text-[10px] text-gray-600 uppercase tracking-[0.3em] font-bold">Scorri</span>
+          <svg className="w-5 h-5 text-gray-600/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </div>
